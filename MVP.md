@@ -13,7 +13,7 @@ Minimum Viable Product (Ni-Ting Chiou)
 
 * **sp500 data visualization:** 
 
-![alt text]((https://github.com/chiouNT/Engineering/blob/main/Image/plots.png)](https://github.com/chiouNT/Engineering/blob/main/Image/plots.png))
+![alt text](https://github.com/chiouNT/Engineering/blob/main/Image/plots.png)
 
 
 * **Make prediction with the trained model from user input:** 
