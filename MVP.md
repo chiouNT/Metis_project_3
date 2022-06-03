@@ -9,13 +9,13 @@ Minimum Viable Product (Ni-Ting Chiou)
 * **Deployment:** Streamlit
 
 
-##  I made a web application for predicting whether the close index of sp500 will go up tomorrow
+#  A web application for predicting whether the close index of sp500 will go up tomorrow
 
 * **sp500 data visualization:** 
 
-![alt text](https://github.com/chiouNT/Linear_regression/blob/main/Images/Model_evaluation.png)
+![alt text]([https://github.com/chiouNT/Linear_regression/blob/main/Images/plots.png]
 
 
 * **Make prediction with the trained model from user input:** 
 
-![alt text](https://github.com/chiouNT/Linear_regression/blob/main/Images/Feature%20comparison.png)
+![alt text](https://github.com/chiouNT/Linear_regression/blob/main/Images/Model_evaluation.png))
