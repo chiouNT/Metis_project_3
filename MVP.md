@@ -7,7 +7,8 @@ Minimum Viable Product (Ni-Ting Chiou)
 * **Processing:** 
   * Target: The close price for the next day goes up
   * Features: 
-    * the ratio of the close price between a day and the average of its previous days (2, 5, 60, 250, and 1000 days)
+    * The ratio of the close price between a day and the average of its previous days (2, 5, 60, 250, and 1000 days)
+    * The sum of days that have the close price of a day higher than its previous day during the past 2, 5, 60, 250, and 1000 days.
   * Model: RandomForestClassifier
 
 * **Deployment:** Streamlit
