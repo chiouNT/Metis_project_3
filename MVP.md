@@ -5,8 +5,8 @@ Minimum Viable Product (Ni-Ting Chiou)
 * **Data ingestion:** Yahoo finance API
 
 * **Processing:** 
-* Target: Model: 
-* RandomForestClassifier
+  * Target: Model: 
+  * RandomForestClassifier
 
 * **Deployment:** Streamlit
 
