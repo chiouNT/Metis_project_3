@@ -5,10 +5,10 @@ Minimum Viable Product (Ni-Ting Chiou)
 * **Data ingestion:** Yahoo finance API
 
 * **Processing:** 
-  * Target: The close price for the next day goes up
+  * Target: The close price for the next day is higher than today.
   * Features: 
-    * The ratio of the close price between a day and the average of its previous days (2, 5, 60, 250, and 1000 days)
-    * The sum of days that have the close price of a day higher than its previous day during the past 2, 5, 60, 250, and 1000 days.
+    * The ratio of the close price between a day and the average of its previous 2, 5, 60, 250, or 1000 days.
+    * The sum of days that have the hihger close price for the next day during the past 2, 5, 60, 250, or 1000 days.
   * Model: RandomForestClassifier
 
 * **Deployment:** Streamlit
