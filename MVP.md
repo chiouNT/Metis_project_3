@@ -12,6 +12,6 @@ Minimum Viable Product (Ni-Ting Chiou)
 #  A web application for predicting whether the close index of sp500 will go up tomorrow
 
 
-![Please see the link](https://share.streamlit.io/chiount/stock_prediction/main/stock_streamlit_app.py))
+[Please see the link](https://share.streamlit.io/chiount/stock_prediction/main/stock_streamlit_app.py)
 
 
