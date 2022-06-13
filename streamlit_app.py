@@ -22,16 +22,46 @@ dataset_name = st.sidebar.selectbox("Select Dataset",
                                 
 price_name = st.sidebar.selectbox("Select Predictor Name", 
                                       ("Close",
-                                      "Ratio_2D (ratio between a day and the average of its previous 2 days)", 
-                                      "Ratio_5D (ratio between a day and the average of its previous 5 days)", 
-                                      "Ratio_60D (ratio between a day and the average of its previous 60 days)",
-                                      "Ratio_250D (ratio between a day and the average of its previous 250 days)",
-                                      "Ratio_1000D (ratio between a day and the average of its previous 1000 days)",
-                                      "Trend_2D (sum of days that have the increased close price during the past 2 days)",
-                                      "Trend_5D (sum of days that have the increased close price during the past 5 days)",
-                                      "Trend_60D (sum of days that have the increased close price during the past 60 days)",
-                                      "Trend_250D (sum of days that have the increased close price during the past 250 days)",
-                                      "Trend_1000D (sum of days that have the increased close price during the past 1000 days)"))
+                                      "Ratio_2D", 
+                                      "Ratio_5D", 
+                                      "Ratio_60D",
+                                      "Ratio_250D",
+                                      "Ratio_1000D",
+                                      "Trend_2D",
+                                      "Trend_5D",
+                                      "Trend_60D",
+                                      "Trend_250D",
+                                      "Trend_1000D"))
+
+def annotation(price_name):
+    if price_name == "Ratio_2D":
+    	note = "Ratio of close price between a day and the average of its previous 2 days"
+    elif price_name == "Ratio_5D":
+        note = "Ratio of close price between a day and the average of its previous 5 days"
+    elif price_name == "Ratio_60D":
+        note = "Ratio vbetween a day and the average of its previous 60 days"
+    elif price_name == "Ratio_250D":
+        note = "Ratio of close price between a day and the average of its previous 250 days"
+    elif price_name == "Ratio_1000D":
+        note = "Ratio between a day and the average of its previous 1000 days"
+    elif price_name == "Trend_2D":
+        note = "Sum of days that have increased close price during the past 2 days"
+    elif price_name == "Trend_5D":
+        note = "Sum of days that have increased close price during the past 5 days"
+    elif price_name == "Trend_60D":
+        note = "Sum of days that have increased close price during the past 60 days"
+    elif price_name == "Trend_250D":
+        note = "Sum of days that have increased close price during the past 250 days"
+    elif price_name == "Trend_1000D":
+        note = "Sum of days that have increased close price during the past 1000 days"
+
+    else:
+        note = "Close price"
+
+    return note
+note = annotation(price_name) 
+st.sidebar.markdown(f"{note}")
+
 
 url = "https://raw.githubusercontent.com/chiouNT/Engineering/main/stock_data_github.csv"
 data_stock = pd.read_csv(url)
@@ -66,7 +96,7 @@ def load_clean_data(ticker_name):
                                 
 def load_dataset(dataset_name):
     if dataset_name == "sp500":
-        data = load_clean_data("^GSPC")
+    	data = load_clean_data("^GSPC")
 
     elif dataset_name == "Seaboard":
         data = load_clean_data("SEB")
@@ -118,7 +148,7 @@ plt.title("All data")
 plt.subplot(2,1,2)
 plt.plot(data.iloc[-2750:][{price_name}])
 plt.xlabel("Date")
-plt.ylabel("price")
+plt.ylabel({price_name})
 plt.title("Data in the recent 10 years (used for predictions)")
 fig.tight_layout()
 st.pyplot(fig)
@@ -145,6 +175,7 @@ precision_scores = precision_score(predictions["Target"], predictions.Prediction
 
 # Displaying the accuracy and the model details
 
+st.write(f"Predictions using all 10 features")
 st.write(f"precision_scores: {precision_scores:.2%}")
 st.write(
 f'Probability that the price will increase in the day next to {data[-1:].reset_index().iloc[0, 0,].strftime("%m/%d/%Y")} is {model.predict_proba(data[new_predictors][-1:])[:, 1][0]:.2%}'
