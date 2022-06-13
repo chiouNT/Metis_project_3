@@ -10,7 +10,7 @@ from sklearn.metrics import precision_score
 import yfinance as yf
 from datetime import date
 
-st.title("Stock price change predictions")
+st.title("Predict whether the stock close price will go up tomorrow")
 
 st.write('''
 ### Using the engineered close price features for the prediction
@@ -22,16 +22,16 @@ dataset_name = st.sidebar.selectbox("Select Dataset",
                                 
 price_name = st.sidebar.selectbox("Select Predictor Name", 
                                       ("Close",
-                                      "Ratio_2D", 
-                                      "Ratio_5D", 
-                                      "Ratio_60D",
-                                      "Ratio_250D",
-                                      "Ratio_1000D",
-                                      "Trend_2D",
-                                      "Trend_5D",
-                                      "Trend_60D",
-                                      "Trend_250D",
-                                      "Trend_1000D"))
+                                      "Ratio_2D (ratio between a day and the average of its previous 2 days)", 
+                                      "Ratio_5D (ratio between a day and the average of its previous 5 days)", 
+                                      "Ratio_60D (ratio between a day and the average of its previous 60 days)",
+                                      "Ratio_250D (ratio between a day and the average of its previous 250 days)",
+                                      "Ratio_1000D (ratio between a day and the average of its previous 1000 days)",
+                                      "Trend_2D (sum of days that have the increased close price during the past 2 days)",
+                                      "Trend_5D (sum of days that have the increased close price during the past 5 days)",
+                                      "Trend_60D (sum of days that have the increased close price during the past 60 days)",
+                                      "Trend_250D (sum of days that have the increased close price during the past 250 days)",
+                                      "Trend_1000D (sum of days that have the increased close price during the past 1000 days)"))
 
 url = "https://raw.githubusercontent.com/chiouNT/Engineering/main/stock_data_github.csv"
 data_stock = pd.read_csv(url)
