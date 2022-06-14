@@ -10,7 +10,7 @@ from sklearn.metrics import precision_score
 import yfinance as yf
 from datetime import date
 
-st.title("Predict whether the stock close price will go up tomorrow")
+st.title("Will the stock close price go up or down tomorrow?")
 
 st.write('''
 ### Using the engineered close price features for the prediction
@@ -35,25 +35,25 @@ price_name = st.sidebar.selectbox("Select Predictor Name",
 
 def annotation(price_name):
     if price_name == "Ratio_2D":
-    	note = "Ratio of close price between a day and the average of its previous 2 days"
+    	note = "Ratio between today's price and the averaged price in the last 2 days"
     elif price_name == "Ratio_5D":
-        note = "Ratio of close price between a day and the average of its previous 5 days"
+        note = "Ratio between today's price and the averaged price during the last 5 days"
     elif price_name == "Ratio_60D":
-        note = "Ratio vbetween a day and the average of its previous 60 days"
+        note = "Ratio between today's price and the averaged price during the last 60 days"
     elif price_name == "Ratio_250D":
-        note = "Ratio of close price between a day and the average of its previous 250 days"
+        note = "Ratio between today's price and the averaged price during the last 250 days"
     elif price_name == "Ratio_1000D":
-        note = "Ratio between a day and the average of its previous 1000 days"
+        note = "Ratio between today's price and the averaged price during the last 1000 days"
     elif price_name == "Trend_2D":
-        note = "Sum of days that have increased close price during the past 2 days"
+        note = "Number of days during the past 2 days that prices goe up"
     elif price_name == "Trend_5D":
-        note = "Sum of days that have increased close price during the past 5 days"
+        note = "Number of days during the past 5 days that prices goe up"
     elif price_name == "Trend_60D":
-        note = "Sum of days that have increased close price during the past 60 days"
+        note = "Number of days during the past 60 days that prices goe up"
     elif price_name == "Trend_250D":
-        note = "Sum of days that have increased close price during the past 250 days"
+        note = "Number of days during the past 250 days that prices goe up"
     elif price_name == "Trend_1000D":
-        note = "Sum of days that have increased close price during the past 1000 days"
+        note = "Number of days during the past 1000 days that prices goe up"
 
     else:
         note = "Close price"
