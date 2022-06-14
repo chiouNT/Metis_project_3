@@ -35,25 +35,25 @@ price_name = st.sidebar.selectbox("Select Predictor Name",
 
 def annotation(price_name):
     if price_name == "Ratio_2D":
-    	note = "Ratio between today's price and the averaged price in the last 2 days"
+    	note = "Ratio between today's close and the averaged close price in the last 2 days"
     elif price_name == "Ratio_5D":
-        note = "Ratio between today's price and the averaged price during the last 5 days"
+        note = "Ratio between today's close and the averaged close price during the last 5 days"
     elif price_name == "Ratio_60D":
-        note = "Ratio between today's price and the averaged price during the last 60 days"
+        note = "Ratio between today's close and the averaged close price during the last 60 days"
     elif price_name == "Ratio_250D":
-        note = "Ratio between today's price and the averaged price during the last 250 days"
+        note = "Ratio between today's close and the averaged close price during the last 250 days"
     elif price_name == "Ratio_1000D":
-        note = "Ratio between today's price and the averaged price during the last 1000 days"
+        note = "Ratio between today's close and the averaged close price during the last 1000 days"
     elif price_name == "Trend_2D":
-        note = "Number of days during the past 2 days that prices goe up"
+        note = "Number of days during the past 2 days that close prices goe up"
     elif price_name == "Trend_5D":
-        note = "Number of days during the past 5 days that prices goe up"
+        note = "Number of days during the past 5 days that close prices goe up"
     elif price_name == "Trend_60D":
-        note = "Number of days during the past 60 days that prices goe up"
+        note = "Number of days during the past 60 days that close prices goe up"
     elif price_name == "Trend_250D":
-        note = "Number of days during the past 250 days that prices goe up"
+        note = "Number of days during the past 250 days that close prices goe up"
     elif price_name == "Trend_1000D":
-        note = "Number of days during the past 1000 days that prices goe up"
+        note = "Number of days during the past 1000 days that close prices goe up"
 
     else:
         note = "Close price"
@@ -175,7 +175,7 @@ precision_scores = precision_score(predictions["Target"], predictions.Prediction
 
 # Displaying the accuracy and the model details
 
-st.write(f"Predictions using all 10 features")
+st.write(f"RandomForestClassifier model with all 10 features")
 st.write(f"precision_scores: {precision_scores:.2%}")
 st.write(
 f'Probability that the price will increase in the day next to {data[-1:].reset_index().iloc[0, 0,].strftime("%m/%d/%Y")} is {model.predict_proba(data[new_predictors][-1:])[:, 1][0]:.2%}'
