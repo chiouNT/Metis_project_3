@@ -33,4 +33,4 @@ The data is ingested from Yahoo’s Finance API and then stored at SQLite databa
 
 ## Communication
 * The following is the web application of the stock market prediction 
-![Stock Mark](https://share.streamlit.io/chiount/engineering/main)
+[Link text Here](https://link-url-here.org)
