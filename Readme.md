@@ -8,7 +8,7 @@ The goal of the project is to build a web application for characterizing the sto
 
 ## Design
 
-The target of the prediction is whether the stock prices will go up or down tomorrow. To predict the stock price changes, the close price was engineered to give 10 engineered ratio and trend features. For 5 ratio features, they are the ratio between today’s close price and the averaged close price in the past 2, 5, 60, 250 and 1000 days. For 5 trend features, they are the number of days that have increased close price during the past 2, 5, 60, 250 and 1000 days.To predict the listed house prices, the listed prices and features were scraped from Zillow websites. 8 features were scraped. For numeric features, they include sizes, number of bedrooms, bathrooms and garages, year built and school rating. For categorical featuers, they include city and hometypes.
+The target of the prediction is whether the stock prices will go up or down tomorrow. To predict the stock price changes, the close price was engineered to give 10 engineered ratio and trend features. For 5 ratio features, they are the ratio between today’s close price and the averaged close price in the past 2, 5, 60, 250 and 1000 days. For 5 trend features, they are the number of days that have increased close price during the past 2, 5, 60, 250 and 1000 days.
 
 ## Data Pipeline
 
