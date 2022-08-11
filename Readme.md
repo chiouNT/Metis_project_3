@@ -1,5 +1,3 @@
-write_up (Ni-Ting Chiou)
-
 # Engineering project: Stock market prediction web application
 
 ## Abstract
